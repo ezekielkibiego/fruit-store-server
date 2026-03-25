@@ -32,6 +32,20 @@ app.get('/api/fruits', (req, res) => {
     });
 });
 
+app.post('/api/fruits', express.json(), (req, res) => {
+  const { name, price, quantity } = req.body;
+  const newFruit = new Fruit({ name, price, quantity });
+
+  newFruit.save()
+    .then((fruit) => {
+      res.status(201).json(fruit);
+    })
+    .catch((error) => {
+      console.error('Error saving fruit:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    });
+});
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
