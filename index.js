@@ -1,6 +1,5 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import Fruit from './models/Fruit.js';
 import connectDB from './config/db.js';
 import fruitRoutes from './routes/fruitRoutes.js';
 
