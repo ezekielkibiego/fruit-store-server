@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 import connectDB from './config/db.js';
 import fruitRoutes from './routes/fruitRoutes.js';
 import authRoutes from './routes/authRoutes.js';
-import cors from cors
+import cors from 'cors';
 
 dotenv.config();
 
